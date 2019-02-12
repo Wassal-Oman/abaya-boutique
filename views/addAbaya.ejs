@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+
+    <title>Abaya Boutique | Add Abaya</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Bootstrap Core Css -->
+    <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Waves Effect Css -->
+    <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!--WaitMe Css-->
+    <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="/css/themes/all-themes.css" rel="stylesheet" />
+  </head>
+
+  <body class="theme-red">
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="javascript:void(0);"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="javascript:void(0);" class="bars"></a>
+          <a class="navbar-brand" href="/">ABAYA BOUTIQUE</a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- User Info -->
+        <div class="user-info">
+          <div class="image">
+            <img src="/images/user.png" width="48" height="48" alt="User" />
+          </div>
+          <div class="info-container">
+            <div
+              class="name"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              administrator
+            </div>
+            <div class="email">admin@abaya-boutique.com</div>
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="header">MENU</li>
+            <li>
+              <a href="/">
+                <i class="material-icons">home</i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="/users">
+                <i class="material-icons">wc</i>
+                <span>List of Customers</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="/abayas">
+                <i class="material-icons">spa</i>
+                <span>List of Abayas</span>
+              </a>
+            </li>
+            <li>
+              <a href="/orders">
+                <i class="material-icons">widgets</i>
+                <span>Orders</span>
+              </a>
+            </li>
+            <li>
+              <a href="/logout">
+                <i class="material-icons">input</i>
+                <span>Log out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="legal">
+          <div class="copyright">
+            &copy; 2019 <a href="javascript:void(0);">ABAYA BOUTIQUE</a>.
+          </div>
+          <div class="version"><b>Version: </b> 1.0.0</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="block-header">
+          <h2>Add New Abaya</h2>
+        </div>
+
+        <!-- Basic Card -->
+        <div class="row clearfix">
+          <div class="card">
+            <div class="header">
+              Fill All Details To Add New Abaya
+            </div>
+            <div class="body">
+              <form
+                class="form-horizontal"
+                action="/abayas/store"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 control-label"
+                    >Abaya Name:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter Abaya Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 control-label">
+                    Abaya Cloth Type:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="type"
+                        type="text"
+                        class="form-control"
+                        id="type"
+                        placeholder="Enter Abaya Cloth Type"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="price" class="col-sm-2 control-label"
+                    >Abaya price:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="price"
+                        type="number"
+                        class="form-control"
+                        id="price"
+                        placeholder="Enter Abaya Price"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="width" class="col-sm-2 control-label"
+                    >Abaya Size:</label
+                  >
+                  <div class="col-sm-5">
+                    <div class="form-line">
+                      <input
+                        name="width"
+                        type="number"
+                        class="form-control"
+                        id="width"
+                        placeholder="Enter Abaya Width"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="form-line">
+                      <input
+                        name="height"
+                        type="number"
+                        class="form-control"
+                        id="height"
+                        placeholder="Enter Abaya Height"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="color" class="col-sm-2 control-label"
+                    >Abaya Color:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <select name="color" class="form-control show-tick">
+                        <option value="Black" selected>Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="White">White</option>
+                        <option value="Orange">Orange</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="size" class="col-sm-2 control-label">
+                    Abaya Image:
+                  </label>
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input name="file" type="file" id="file" required />
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Abaya</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="/plugins/node-waves/waves.js"></script>
+
+    <!-- Wait Me Plugin Js -->
+    <script src="/plugins/waitme/waitMe.js"></script>
+
+    <!-- Custom Js -->
+    <script src="/js/admin.js"></script>
+    <script src="/js/pages/cards/basic.js"></script>
+
+    <!-- Demo Js -->
+    <script src="/js/demo.js"></script>
+  </body>
+</html>

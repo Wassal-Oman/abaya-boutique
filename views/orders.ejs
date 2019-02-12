@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <title>Abaya Boutique | Abayas</title>
+    <title>Abaya Boutique | Orders</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -17,9 +17,6 @@
     <!-- Waves Effect Css -->
     <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
 
-    <!--WaitMe Css-->
-    <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
-
     <!-- Animation Css -->
     <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
 
@@ -28,25 +25,10 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
-
-    <!-- Custom Style -->
-    <style>
-        .button-group {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-        .add-abaya {
-            margin: 10px 0px 10px 0px;
-        }
-        .custom-button {
-            width: 100px;
-        }
-    </style>
 </head>
 
 <body class="theme-red">
-   
+    
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
 
@@ -92,13 +74,13 @@
                             <span>List of Customers</span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="/abayas">
                             <i class="material-icons">spa</i>
                             <span>List of Abayas</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="/orders">
                             <i class="material-icons">widgets</i>
                             <span>Orders</span>
@@ -130,41 +112,44 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>LIST OF ABAYAS</h2>
+                <h2>LIST OF ORDERS</h2>
             </div>
-
-            <div class="add-abaya"><a href="/abayas/add" class="btn btn-primary">ADD NEW ABAYA</a></div>
-
-            <!-- Basic Card -->
+            <!-- Basic Table -->
             <div class="row clearfix">
-                <% if(typeof abayas != 'undefined' && abayas.length > 0) { %>
-                    <% abayas.forEach(abaya => { %>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="card">
-                                <div class="header button-group">
-                                    <h2><%= abaya.name %></h2>
-                                    <h2><%= abaya.price %> OMR</h2>
-                                </div>
-                                <div class="body text-center">
-                                    <img src="<%= abaya.image %>" alt="Abaya" height="250px" width="250px">
-                                    <p>Color: <%= abaya.color %></p>
-                                    <div class="button-group">
-                                        <a href="/abayas/<%= abaya.name %>/edit" class="btn btn-warning custom-button">Edit</a>
-                                        <a href="/abayas/<%= abaya.id %>/delete" onclick="return confirm('Are you sure to delete this abaya?');" class="btn btn-danger custom-button">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <% }); %>
-                <% } else { %>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header text-center">
-                            No Data Available
+                        <div class="body table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>CUSTOMER NAME</th>
+                                        <th>CUSTOMER PHONE</th>
+                                        <th>ABAYA NAME</th>
+                                        <th>COUNT</th>
+                                        <th>IS PAID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% if(typeof orders != 'undefined' && orders.length > 0) { %>
+                                    <% orders.forEach(order => { %>
+                                        <tr>
+                                            <td><%= order.customer_name %></td>
+                                            <td><%= order.customer_phone %></td>
+                                            <td><%= order.abaya_name %></td>
+                                            <td><%= order.count %></td>
+                                            <td><%= order.is_paid %></td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="5" class="text-center">No Data Available</td>
+                                    </tr>
+                                <% } %>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <% } %>
             </div>
         </div>
     </section>
@@ -184,14 +169,11 @@
     <!-- Waves Effect Plugin Js -->
     <script src="/plugins/node-waves/waves.js"></script>
 
-    <!-- Wait Me Plugin Js -->
-    <script src="/plugins/waitme/waitMe.js"></script>
-
     <!-- Custom Js -->
     <script src="/js/admin.js"></script>
-    <script src="/js/pages/cards/basic.js"></script>
 
     <!-- Demo Js -->
     <script src="/js/demo.js"></script>
 </body>
+
 </html>
