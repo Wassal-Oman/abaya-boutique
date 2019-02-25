@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
       name="viewport"
     />
 
-    <title>Abaya Boutique | Users</title>
+    <title>Abaya Boutique | Add User</title>
 
     <!-- Google Fonts -->
     <link
@@ -27,6 +27,9 @@
     <!-- Waves Effect Css -->
     <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
 
+    <!--WaitMe Css-->
+    <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
+
     <!-- Animation Css -->
     <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
 
@@ -35,14 +38,6 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
-
-    <!-- Custom Style -->
-    <style>
-      .custom-button {
-        margin: 10px 0px 10px 0px;
-        width: 100px;
-      }
-    </style>
   </head>
 
   <body class="theme-red">
@@ -72,7 +67,7 @@
         <!-- User Info -->
         <div class="user-info">
           <div class="image">
-            <img src="images/user.png" width="48" height="48" alt="User" />
+            <img src="/images/user.png" width="48" height="48" alt="User" />
           </div>
           <div class="info-container">
             <div
@@ -143,53 +138,101 @@
     <section class="content">
       <div class="container-fluid">
         <div class="block-header">
-          <h2>LIST OF CUSTOMERS</h2>
+          <h2>Add New User</h2>
         </div>
 
-        <div class="custom-button">
-          <a href="/users/add" class="btn btn-primary">ADD NEW USER</a>
-        </div>
-
-        <!-- Basic Table -->
+        <!-- Basic Card -->
         <div class="row clearfix">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="card">
-              <div class="body table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>NAME</th>
-                      <th>EMAIL</th>
-                      <th>PHONE</th>
-                      <th>USER TYPE</th>
-                      <th>DELETE USER</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% if(typeof users != 'undefined' && users.length > 0) { %>
-                    <% users.forEach(user => { %>
-                    <tr>
-                      <td><%= user.name; %></td>
-                      <td><%= user.email; %></td>
-                      <td><%= user.phone; %></td>
-                      <td><%= user.type; %></td>
-                      <td>
-                        <a
-                          href="/users/<%= user.id %>/<%= user.type %>/delete"
-                          class="btn btn-danger"
-                          onclick="return confirm('Are you sure to delete this user?');"
-                          >x</a
-                        >
-                      </td>
-                    </tr>
-                    <% }); %> <% } else { %>
-                    <tr>
-                      <td colspan="5" class="text-center">No Data Available</td>
-                    </tr>
-                    <% } %>
-                  </tbody>
-                </table>
-              </div>
+          <div class="card">
+            <div class="header">
+              Fill All Details To Add New User
+            </div>
+            <div class="body">
+              <form class="form-horizontal" action="/users/store" method="POST">
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 control-label"
+                    >User Name:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter User Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 control-label">
+                    User Email:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="email"
+                        type="text"
+                        class="form-control"
+                        id="email"
+                        placeholder="Enter User Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="price" class="col-sm-2 control-label"
+                    >User Phone:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="phone"
+                        type="number"
+                        class="form-control"
+                        id="phone"
+                        placeholder="Enter User Phone"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="price" class="col-sm-2 control-label"
+                    >User Password:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <input
+                        name="password"
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        placeholder="Enter User Password"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="color" class="col-sm-2 control-label"
+                    >User Type:</label
+                  >
+                  <div class="col-sm-10">
+                    <div class="form-line">
+                      <select name="type" class="form-control show-tick">
+                        <option value="Deliverer" selected>Deliverer</option>
+                        <option value="Tailor">Tailor</option>
+                        <option value="Customer">Customer</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add User</button>
+              </form>
             </div>
           </div>
         </div>
@@ -202,17 +245,18 @@
     <!-- Bootstrap Core Js -->
     <script src="/plugins/bootstrap/js/bootstrap.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
     <!-- Slimscroll Plugin Js -->
     <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
     <script src="/plugins/node-waves/waves.js"></script>
 
+    <!-- Wait Me Plugin Js -->
+    <script src="/plugins/waitme/waitMe.js"></script>
+
     <!-- Custom Js -->
     <script src="/js/admin.js"></script>
+    <script src="/js/pages/cards/basic.js"></script>
 
     <!-- Demo Js -->
     <script src="/js/demo.js"></script>

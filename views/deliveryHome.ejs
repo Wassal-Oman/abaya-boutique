@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
       name="viewport"
     />
 
-    <title>Abaya Boutique | Users</title>
+    <title>Abaya Boutique | Deliveries</title>
 
     <!-- Google Fonts -->
     <link
@@ -35,14 +35,6 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
-
-    <!-- Custom Style -->
-    <style>
-      .custom-button {
-        margin: 10px 0px 10px 0px;
-        width: 100px;
-      }
-    </style>
   </head>
 
   <body class="theme-red">
@@ -81,9 +73,9 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              administrator
+              <%= user.name %>
             </div>
-            <div class="email">admin@abaya-boutique.com</div>
+            <div class="email"><%= user.email %></div>
           </div>
         </div>
 
@@ -91,34 +83,10 @@
         <div class="menu">
           <ul class="list">
             <li class="header">MENU</li>
-            <li>
-              <a href="/">
+            <li class="active">
+              <a href="/delivery-home">
                 <i class="material-icons">home</i>
                 <span>Home</span>
-              </a>
-            </li>
-            <li class="active">
-              <a href="/users">
-                <i class="material-icons">wc</i>
-                <span>List of Users</span>
-              </a>
-            </li>
-            <li>
-              <a href="/abayas">
-                <i class="material-icons">spa</i>
-                <span>List of Abayas</span>
-              </a>
-            </li>
-            <li>
-              <a href="/orders">
-                <i class="material-icons">widgets</i>
-                <span>Orders</span>
-              </a>
-            </li>
-            <li>
-              <a href="/deliveries">
-                <i class="material-icons">local_shipping</i>
-                <span>Deliveries</span>
               </a>
             </li>
             <li>
@@ -143,13 +111,8 @@
     <section class="content">
       <div class="container-fluid">
         <div class="block-header">
-          <h2>LIST OF CUSTOMERS</h2>
+          <h2>LIST OF DELIVERIES</h2>
         </div>
-
-        <div class="custom-button">
-          <a href="/users/add" class="btn btn-primary">ADD NEW USER</a>
-        </div>
-
         <!-- Basic Table -->
         <div class="row clearfix">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -158,29 +121,22 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>NAME</th>
-                      <th>EMAIL</th>
-                      <th>PHONE</th>
-                      <th>USER TYPE</th>
-                      <th>DELETE USER</th>
+                      <th>CUSTOMER NAME</th>
+                      <th>CUSTOMER PHONE</th>
+                      <th>ABAYA NAME</th>
+                      <th>COUNT</th>
+                      <th>IS PAID</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <% if(typeof users != 'undefined' && users.length > 0) { %>
-                    <% users.forEach(user => { %>
+                    <% if(typeof deliveries != 'undefined' && deliveries.length
+                    > 0) { %> <% deliveries.forEach(delivery => { %>
                     <tr>
-                      <td><%= user.name; %></td>
-                      <td><%= user.email; %></td>
-                      <td><%= user.phone; %></td>
-                      <td><%= user.type; %></td>
-                      <td>
-                        <a
-                          href="/users/<%= user.id %>/<%= user.type %>/delete"
-                          class="btn btn-danger"
-                          onclick="return confirm('Are you sure to delete this user?');"
-                          >x</a
-                        >
-                      </td>
+                      <td><%= delivery.customer_name %></td>
+                      <td><%= delivery.customer_phone %></td>
+                      <td><%= delivery.abaya_name %></td>
+                      <td><%= delivery.count %></td>
+                      <td><%= delivery.is_paid %></td>
                     </tr>
                     <% }); %> <% } else { %>
                     <tr>

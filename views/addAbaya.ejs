@@ -95,7 +95,7 @@
             <li>
               <a href="/users">
                 <i class="material-icons">wc</i>
-                <span>List of Customers</span>
+                <span>List of Users</span>
               </a>
             </li>
             <li class="active">
@@ -108,6 +108,12 @@
               <a href="/orders">
                 <i class="material-icons">widgets</i>
                 <span>Orders</span>
+              </a>
+            </li>
+            <li>
+              <a href="/deliveries">
+                <i class="material-icons">local_shipping</i>
+                <span>Deliveries</span>
               </a>
             </li>
             <li>
@@ -171,14 +177,15 @@
                   >
                   <div class="col-sm-10">
                     <div class="form-line">
-                      <input
-                        name="type"
-                        type="text"
-                        class="form-control"
-                        id="type"
-                        placeholder="Enter Abaya Cloth Type"
-                        required
-                      />
+                      <select name="type" class="form-control show-tick">
+                        <option value="Nada" selected>Nada</option>
+                        <option value="Top Black">Top Black</option>
+                        <option value="Korean Crepe">Korean Crepe</option>
+                        <option value="Saudi Crepe">Saudi Crepe</option>
+                        <option value="Silk">Silk</option>
+                        <option value="Toshi">Toshi</option>
+                        <option value="Chinese Crepe">Chinese Crepe</option>
+                      </select>
                     </div>
                   </div>
                 </div>

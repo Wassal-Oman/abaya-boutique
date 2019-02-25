@@ -95,7 +95,7 @@
             <li>
               <a href="/users">
                 <i class="material-icons">wc</i>
-                <span>List of Customers</span>
+                <span>List of Users</span>
               </a>
             </li>
             <li class="active">
@@ -108,6 +108,12 @@
               <a href="/orders">
                 <i class="material-icons">widgets</i>
                 <span>Orders</span>
+              </a>
+            </li>
+            <li>
+              <a href="/deliveries">
+                <i class="material-icons">local_shipping</i>
+                <span>Deliveries</span>
               </a>
             </li>
             <li>
@@ -149,6 +155,7 @@
                 enctype="multipart/form-data"
               >
                 <input type="hidden" value="<%= abaya.id %>" name="id">
+                <input type="hidden" value="<%= abaya.image_name %>" name="image_name">
                 <div class="form-group">
                   <label for="name" class="col-sm-2 control-label"
                     >Abaya Name:</label
@@ -173,15 +180,15 @@
                     >
                     <div class="col-sm-10">
                       <div class="form-line">
-                        <input
-                          name="type"
-                          type="text"
-                          class="form-control"
-                          id="type"
-                          placeholder="Enter Abaya Cloth Type"
-                          required
-                          value="<%= abaya.type %>"
-                        />
+                        <select name="type" class="form-control show-tick">
+                          <option value="Black" <% if(abaya.type === 'Nada') { %><%= 'selected' %><% }%>>Nada</option>
+                          <option value="Red" <% if(abaya.type === 'Top Black') { %><%= 'selected' %><% }%>>Top Black</option>
+                          <option value="Green" <% if(abaya.type === 'Korean Crepe') { %><%= 'selected' %><% }%>>Korean Crepe</option>
+                          <option value="Blue" <% if(abaya.type === 'Saudi Crepe') { %><%= 'selected' %><% }%>>Saudi Crepe</option>
+                          <option value="White" <% if(abaya.type === 'Silk') { %><%= 'selected' %><% }%>>Silk</option>
+                          <option value="Orange" <% if(abaya.type === 'Toshi') { %><%= 'selected' %><% }%>>Toshi</option>
+                          <option value="Orange" <% if(abaya.type === 'Chinese Crepe') { %><%= 'selected' %><% }%>>Chinese Crepe</option>
+                        </select>
                       </div>
                     </div>
                   </div>

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
 
     <title>Abaya Boutique | Orders</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- Bootstrap Core Css -->
-    <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
     <!-- Waves Effect Css -->
     <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
@@ -21,137 +31,186 @@
     <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" />
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
-</head>
 
-<body class="theme-red">
-    
+    <!-- Custom Style -->
+    <style>
+      .button-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 10px;
+      }
+      .add-abaya {
+        margin: 10px 0px 10px 0px;
+      }
+      .custom-button {
+        width: 100px;
+      }
+    </style>
+  </head>
+
+  <body class="theme-red">
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
 
     <!-- Top Bar -->
     <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="/">ABAYA BOUTIQUE</a>
-            </div>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="javascript:void(0);"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="javascript:void(0);" class="bars"></a>
+          <a class="navbar-brand" href="/">ABAYA BOUTIQUE</a>
         </div>
+      </div>
     </nav>
 
     <section>
-        <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
-
-            <!-- User Info -->
-            <div class="user-info">
-                <div class="image">
-                    <img src="images/user.png" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">administrator</div>
-                    <div class="email">admin@abaya-boutique.com</div>
-                </div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- User Info -->
+        <div class="user-info">
+          <div class="image">
+            <img src="images/user.png" width="48" height="48" alt="User" />
+          </div>
+          <div class="info-container">
+            <div
+              class="name"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              administrator
             </div>
+            <div class="email">admin@abaya-boutique.com</div>
+          </div>
+        </div>
 
-            <!-- Menu -->
-            <div class="menu">
-                <ul class="list">
-                    <li class="header">MENU</li>
-                    <li>
-                        <a href="/">
-                            <i class="material-icons">home</i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/users">
-                            <i class="material-icons">wc</i>
-                            <span>List of Customers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/abayas">
-                            <i class="material-icons">spa</i>
-                            <span>List of Abayas</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="/orders">
-                            <i class="material-icons">widgets</i>
-                            <span>Orders</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/logout">
-                            <i class="material-icons">input</i>
-                            <span>Log out</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="header">MENU</li>
+            <li>
+              <a href="/">
+                <i class="material-icons">home</i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="/users">
+                <i class="material-icons">wc</i>
+                <span>List of Users</span>
+              </a>
+            </li>
+            <li>
+              <a href="/abayas">
+                <i class="material-icons">spa</i>
+                <span>List of Abayas</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="/orders">
+                <i class="material-icons">widgets</i>
+                <span>Orders</span>
+              </a>
+            </li>
+            <li>
+              <a href="/deliveries">
+                <i class="material-icons">local_shipping</i>
+                <span>Deliveries</span>
+              </a>
+            </li>
+            <li>
+              <a href="/logout">
+                <i class="material-icons">input</i>
+                <span>Log out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-            <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2019 <a href="javascript:void(0);">ABAYA BOUTIQUE</a>.
-                </div>
-                <div class="version">
-                    <b>Version: </b> 1.0.0
-                </div>
-            </div>
-
-        </aside>
-
+        <!-- Footer -->
+        <div class="legal">
+          <div class="copyright">
+            &copy; 2019 <a href="javascript:void(0);">ABAYA BOUTIQUE</a>.
+          </div>
+          <div class="version"><b>Version: </b> 1.0.0</div>
+        </div>
+      </aside>
     </section>
 
     <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>LIST OF ORDERS</h2>
-            </div>
-            <!-- Basic Table -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="body table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>CUSTOMER NAME</th>
-                                        <th>CUSTOMER PHONE</th>
-                                        <th>ABAYA NAME</th>
-                                        <th>COUNT</th>
-                                        <th>IS PAID</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <% if(typeof orders != 'undefined' && orders.length > 0) { %>
-                                    <% orders.forEach(order => { %>
-                                        <tr>
-                                            <td><%= order.customer_name %></td>
-                                            <td><%= order.customer_phone %></td>
-                                            <td><%= order.abaya_name %></td>
-                                            <td><%= order.count %></td>
-                                            <td><%= order.is_paid %></td>
-                                        </tr>
-                                    <% }); %>
-                                <% } else { %>
-                                    <tr>
-                                        <td colspan="5" class="text-center">No Data Available</td>
-                                    </tr>
-                                <% } %>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container-fluid">
+        <div class="block-header">
+          <h2>LIST OF ORDERS</h2>
         </div>
+        <!-- Basic Card -->
+        <div class="row clearfix">
+          <% if(typeof orders != 'undefined' && orders.length > 0) { %> <%
+          orders.forEach(order => { %>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="header button-group">
+                <h2><%= order.customer_name %></h2>
+                <h2><%= order.customer_phone %></h2>
+              </div>
+              <div class="body text-center">
+                <% if(order.image != null) { %>
+                <img
+                  src="<%= order.image %>"
+                  alt="Abaya"
+                  height="250px"
+                  width="250px"
+                />
+                <% } else { %>
+                <img
+                  src="/images/abaya-placeholder.png"
+                  alt="Abaya"
+                  height="250px"
+                  width="250px"
+                />
+                <% } %>
+                <div class="button-group">
+                  <span><%= order.abaya_name %></span>
+                  <span># <%= order.count %></span>
+                  <% if(order.is_paid == true) { %>
+                  <span style="color: limegreen">Paid</span>
+                  <% } else { %>
+                  <span style="color: red">Not Paid</span>
+                  <% } %>
+                </div>
+                <div class="button-group">
+                  <% if(order.is_delivered == false) { %>
+                  <a
+                    href="/orders/<%= order.order_id %>/deliver"
+                    class="btn btn-primary"
+                    >Send To Delivery</a
+                  >
+                  <% } else { %> Delivered <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %> <% } else { %>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+              <div class="header text-center">
+                No Data Available
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
     </section>
 
     <!-- Jquery Core Js -->
@@ -174,6 +233,5 @@
 
     <!-- Demo Js -->
     <script src="/js/demo.js"></script>
-</body>
-
+  </body>
 </html>
